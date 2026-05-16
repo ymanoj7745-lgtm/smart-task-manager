@@ -1,6 +1,8 @@
 import eventlet
 eventlet.monkey_patch()
 
+import os
+
 from flask import Flask
 from flask_login import LoginManager, current_user
 from flask_socketio import join_room, leave_room
@@ -67,4 +69,5 @@ def on_join(data=None):
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True, host="127.0.0.1", port=5001)
+    port = int(os.environ.get("PORT", 5001))
+    socketio.run(app, debug=False, host="0.0.0.0", port=port)
