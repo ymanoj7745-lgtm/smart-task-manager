@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Dashboard — TaskFlow{% endblock %}
+{% block title %}Dashboard — Tackl{% endblock %}
 
 {% block content %}
 <div class="app-layout">
@@ -8,7 +8,7 @@
   <aside class="sidebar">
     <div class="sidebar__logo">
       <span class="logo-icon">✅</span>
-      <span>TaskFlow</span>
+      <span>Tackl</span>
     </div>
     <nav class="sidebar__nav">
       <a href="#" class="nav-link active" onclick="showSection('tasks')">📋 My Tasks</a>
@@ -118,5 +118,7 @@
 
 {% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/confetti.js') }}"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 {% endblock %}
